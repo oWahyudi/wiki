@@ -1,4 +1,4 @@
-import markdown
+import markdown2
 import html
 
 from django.shortcuts import render
@@ -15,7 +15,7 @@ def title(request,title):
     markdown_text=util.get_entry(title)
 
     if(markdown_text is not None):
-        html_text=markdown.markdown(markdown_text) #Conver markdown text to HTML
+        html_text=markdown2.markdown(markdown_text) #Conver markdown text to HTML
         notfound=False
     else:
         html_text=""
