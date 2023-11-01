@@ -19,11 +19,11 @@ Experimental - Web development using Django framework
    > python manage.py runserver 8001  (run at port 8001)  
 
 6. Create Django apps
-   > stop webserver (CTR-C)<br />
-   > python manage.py startapp <appname><br />
-   > Configure <appname> into INSTALL_APP in setting.py (in Django admin Project folder)<br />
-   > Create urls.py in <appname> folder<br />
-   > Configure <appname> path into URLPATTERN in urls.py (in Django admin project folder)<br />
+   > stop webserver (CTR-C)  
+   > python manage.py startapp <appname>  
+   > Configure <appname> into INSTALL_APP in setting.py (in Django admin Project folder)  
+   > Create urls.py in <appname> folder  
+   > Configure <appname> path into URLPATTERN in urls.py (in Django admin project folder)  
 
 7. Create default Session table.
    > python manage.py migrate (in Django admin project root folder)
