@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+{% load static %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+{% autoescape off %}
+    {% if notfound %}
+        <h1>{{ title|upper }}</h1>
+        <div class="content-body content-body-notfound">
+            Wiki does not have an article with this exact name.
+        </div>   
+    {% else %}
+        {{ content }}
+    {% endif %}
+{% endautoescape %}
+{% endblock %}
