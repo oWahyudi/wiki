@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.http import HttpRequest,HttpResponseRedirect
 from django.urls import reverse
 from . import util
-
+from .forms import NewPageForm,EditPageForm
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -41,3 +41,27 @@ def search(request):
             return render(request, "encyclopedia/index.html", {
                 "entries": filtered_entries
             })
+
+def create(request):
+    if request.method=="post":
+        form=NewPageForm(request.POST)
+    else:
+        form=NewPageForm()
+        
+    return render(request, "encyclopedia/newpage.html", {
+        "form": form,
+        "errormessage": 'test',
+        'error': False
+    })
+
+def edit(request,title):
+    if request.method=="post":
+        form=EditPageForm(request.POST)
+    else:
+        form=EditPageForm(initial={'title_field': title})
+
+    return render(request, "encyclopedia/newpage.html", {
+        "form": form,
+        "errormessage": 'test',
+        'error': False
+    })

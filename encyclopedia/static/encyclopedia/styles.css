@@ -86,10 +86,10 @@ body {
 }
 
 
-.main textarea {
+/* .main textarea {
     height: 90vh;
     width: 80%;
-}
+} */
 
 .main {
     padding: 10px;
@@ -109,4 +109,44 @@ body {
 
 .sidebar h2 {
     margin-top: 10px;
+}
+
+
+
+.error-message {
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    padding-left: 40px;
+    margin: 10px 0;
+    border-radius: 5px;
+    width: 50vw;
+    position: relative;
+}
+
+.error-message::before {
+    content: "!";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.editpage {
+    position: fixed;
+    font-size: small;
+    margin-top: 5px;
+    margin-right: 5px;
+    top: 0;
+    right: 0;
 }

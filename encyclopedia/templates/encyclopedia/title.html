@@ -13,6 +13,7 @@
         </div>   
     {% else %}
         {{ content }}
+        <a href="{% url 'encyclopedia:edit' title=title %}" class="editpage">Edit Page</a>
     {% endif %}
 {% endautoescape %}
 {% endblock %}

@@ -1,0 +1,23 @@
+label[for="id_content_field"]::after {
+    content: " *";
+    color: red;
+}
+
+label[for="id_title_field"]::after {
+    content: " *";
+    color: red;
+}
+
+
+.textbox-medium {
+    width: 60vw; 
+    border:gainsboro solid 1px;
+}
+
+.textarea-medium {
+    width: 60vw;
+    height: 60vh;
+    border:gainsboro solid 1px;
+    height: 60vh;
+}
+
