@@ -2,6 +2,8 @@ import markdown2
 import html
 
 from django.shortcuts import render
+from django.http import HttpRequest,HttpResponseRedirect
+from django.urls import reverse
 from . import util
 
 
@@ -27,4 +29,15 @@ def title(request,title):
         "notfound": notfound
     })
 
-
+def search(request):
+    if request.method=='POST':
+        search_title=request.POST.get('q','')
+        if util.get_entry(search_title) is not None:
+            redirect_url=reverse('encyclopedia:title',args=[search_title])
+            return HttpResponseRedirect(redirect_url)
+        else:
+            entries=util.list_entries()
+            filtered_entries=[x for x in entries if search_title.lower() in x.lower() ]
+            return render(request, "encyclopedia/index.html", {
+                "entries": filtered_entries
+            })
