@@ -1,10 +1,13 @@
 import markdown2, html,random
 
 from django.shortcuts import render
-from django.http import HttpRequest,HttpResponseRedirect
+from django.http import HttpRequest,HttpResponseRedirect,HttpResponse
 from django.urls import reverse
 from . import util
 from .forms import NewPageForm,EditPageForm
+
+def custom_404_view(request,undefinedpath):
+    return render(request,'encyclopedia/custom_404.html',status=404)
 
 
 def index(request):
