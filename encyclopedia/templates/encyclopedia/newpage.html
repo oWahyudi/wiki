@@ -6,11 +6,11 @@
 {% endblock %}
 {% block body %}
     <h1>Create New Page</h1>
-    <form method="post">
+    <form action="{% url 'encyclopedia:create' %}" method="post">
        {% csrf_token %}
        <table>{{ form }}</table>
        <button type="submit">Save</button><br>
-       {% if error %}
+       {% if iserror %}
        <div class="error-message">{{ errormessage }}</div>
        {% endif %}
     </form>

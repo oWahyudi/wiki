@@ -9,12 +9,14 @@ body {
     white-space: pre;
 }
 
-.main h1 {
+.main h1,
+.main h2,
+.main h3,
+.main h4 {
     margin-top: 0px;
     margin-left: 20px;
     margin-right: 20px;
     padding-top: 30px;  
-    font-size: 30px;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
@@ -24,20 +26,20 @@ body {
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
+.main h1 {
+    font-size: 30px;
+}
 
 .main h2 {
-    margin-top: 0px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-top: 30px;  
+    font-size: 25px;
+}
+
+.main h3 {
     font-size: 20px;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    border-bottom: 1px;
-    border-style: solid;
-    border-color: gainsboro;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.main h4 {
+    font-size: 15px;
 }
 
 .main p {
