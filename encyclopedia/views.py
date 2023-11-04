@@ -121,6 +121,6 @@ def edit(request,title):
 
 def randompage(request):
     entries= util.list_entries()
-    title=entries[random.randint(0, len(entries))]
+    title=entries[random.randint(0, len(entries)-1)]
 
     return HttpResponseRedirect(reverse("encyclopedia:title",args=[title]))
